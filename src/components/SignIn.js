@@ -1,6 +1,7 @@
 import React from 'react';
 import {createStyles, Grid, TextField, Typography, Button} from '@material-ui/core';
 import withStyles from "@material-ui/core/styles/withStyles";
+import {signIn} from "../api";
 
 const styles = () => createStyles({
     root: {
@@ -24,8 +25,15 @@ class SignInComponent extends React.Component {
         })
     }
 
-    handleSignIn = () => {
-
+    handleSignIn = async () => {
+        const {
+            email,
+            password
+        } = this.state
+        const result = await signIn(email, password)
+        if(result.authorized) {
+            this.props.history.push('/dashboard')
+        }
     }
 
     render() {
