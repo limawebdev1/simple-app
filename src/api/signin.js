@@ -36,3 +36,4 @@ export const signIn = async (email, password) => {
         authorized: true
     }
 }
+

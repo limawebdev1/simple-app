@@ -1,7 +1,7 @@
 import React from 'react';
-import {createStyles, Grid, TextField, Typography, Button} from '@material-ui/core';
+import { createStyles, Grid, TextField, Typography, Button } from '@material-ui/core';
 import withStyles from "@material-ui/core/styles/withStyles";
-import {signIn} from "../api";
+import { signIn } from "../api/signin";
 
 const styles = () => createStyles({
     root: {
